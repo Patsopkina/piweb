@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cj/style.css">
+   
+    <title>Опрос покупателя</title>
+</head>
+<body>
+    <div class="header">Опрос покупателя мобильного телефона</div>
+    <main>
+        <div class="article" id="contentArea">
+                    <h2>Заполните форму</h2>
+                    <form id="surveyForm" onsubmit="saveData(event)">
+                        <label for="name">Имя покупателя:</label>
+                        <input type="text" id="name" name="Имя" required><br><br>
+
+                        <label for="date">Дата покупки:</label>
+                        <input type="datetime-local" id="date" name="Дата" required><br><br>
+
+                        <label>Предпочитаемая ОС:</label><br>
+                        <input type="radio" id="android" name="ОС" value="Android" required>
+                        <label for="android">Android</label><br>
+                        <input type="radio" id="ios" name="ОС" value="iOS" required>
+                        <label for="ios">iOS</label><br>
+                        <input type="radio" id="other" name="ОС" value="Другое" required>
+                        <label for="other">Другое</label><br><br>
+
+                        <label>Дополнительные функции:</label><br>
+                        <input type="checkbox" id="nfc" name="Функционал" value="NFC">
+                        <label for="nfc">NFC</label><br>
+                        <input type="checkbox" id="wireless" name="Функционал" value="Беспроводная зарядка">
+                        <label for="wireless">Беспроводная зарядка</label><br>
+                        <input type="checkbox" id="dualSim" name="Функционал" value="Две SIM-карты">
+                        <label for="dualSim">Две SIM-карты</label><br><br>
+
+                        <label for="comment" >Комментарий:</label><br>
+                        <textarea id="comment" placeholder="Введите ваш комментарий здесь..."name="Комментарий" rows="4" cols="50"></textarea><br><br>
+
+                        <button type="submit">Отправить</button>
+                        <button type="button" onclick="clearForm()">Очистить содержимое</button>
+                        <button type="button" onclick="showResults()">Посмотреть результат</button>
+                    </form>
+        </div>
+
+        <div class="nav">
+            Ваше мнение для нас очень важно!
+            <br>
+            ............
+            <br>
+            <br>
+            Мы очень рады, что вы решили пройти наш опрос!
+            <br>
+            ............
+            <br>
+            <br>
+            Вы помогаете нам становиться лучше!
+            <br>
+            ............
+            <br>
+            <br>
+            Наше успех зависит от вас!
+            <br>
+            ............
+            <br>
+            <br>
+            Оставайтесь с нами и в будущем!
+            <br>
+            ............
+        </div>
+        <div class="aside">
+        </div>
+    </main>
+
+    <div class="footer">
+        <p>&copy; 2025 Все права защищены</p>
+    </div>
+    <script src="cj/js.js"></script>
+</body>
+</html>

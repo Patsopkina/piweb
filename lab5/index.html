@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Автостоянка</title>
+  <link rel="stylesheet" href="cj/style.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Добавить/Редактировать запись</h2>
+        <select id="recordId" onchange="loadRecord()">
+            <option value="">Выберите ID записи</option>
+        </select>
+        <input type="text" id="carName" placeholder="Название авто" required>
+        <input type="text" id="ownerName" placeholder="ФИО владельца" required>
+        <input type="text" id="plateNumber" placeholder="Номер авто" required>
+        <input type="time" id="parkingTime" required>
+        <button onclick="addOrUpdateRecord()">Ввести новую запись</button>
+        <button onclick="clearForm()">Очистить форму</button>
+        <button onclick="deleteRecord()">Удалить выбранную запись</button>
+        <button onclick="findMinMaxParkingTime()">Найти минимальное и максимальное время стоянки</button>
+        
+        <h2>Добавить новое свойство</h2>
+        <input type="text" id="newProperty" placeholder="Название свойства">
+        <input type="text" id="newValue" placeholder="Значение свойства">
+        <button onclick="addNewProperty()">Добавить свойство</button>
+
+        <h2>Удалить свойство</h2>
+        <select id="propertyToDelete">
+            <option value="">Выберите свойство для удаления</option>
+        </select>
+        <input type="checkbox" id="deleteAllRecords"> <span>Удалить это свойство во всех записях</span>
+        <button onclick="deleteProperty()">Удалить свойство</button>
+        <h2>Список автомобилей</h2>
+        <table id="recordsTable">
+           
+            <tbody id="recordsTable"></tbody>
+        </table>
+    </div>
+
+   <script src="cj/js.js"></script>
+</body>
+</html>
