@@ -15,7 +15,8 @@ window.onload = function() {
         updateTable(); 
         updatePropertySelect();
     }
-};
+    loadHistory();
+}
 function addOrUpdateRecord() {
     let select = document.getElementById("recordId");
     let recordId = select.value || recordCounter++; 
@@ -23,10 +24,16 @@ function addOrUpdateRecord() {
     let ownerName = document.getElementById("ownerName").value;
     let plateNumber = document.getElementById("plateNumber").value;
     let parkingTime = document.getElementById("parkingTime").value;
-
     if (carName && ownerName && plateNumber && parkingTime) {
+        const isNew = !records[recordId];
         records[recordId] = { carName, ownerName, plateNumber, parkingTime };
-        alert("Запись успешно добавлена");
+        if (isNew) {
+            alert("Запись успешно добавлена");
+            logHistory(`Добавлена новая запись с ID ${recordId}`);
+        } else {
+            alert("Запись успешно обновлена");
+            logHistory(`Запись с ID ${recordId} была обновлена`);
+        }
         updateLocalStorage();
         updateTable();
         updateSelect();
@@ -41,6 +48,8 @@ function deleteRecord() {
         
         delete records[recordId];
         alert("Запись успешно удалена");
+        logHistory(`Запись с ID ${recordId} была удалена`);
+
         renumberRecords();
         updateLocalStorage();
         updateTable();
@@ -48,7 +57,6 @@ function deleteRecord() {
         clearForm();
     }
 }
-
 function renumberRecords() {
     let newRecords = {};
     let newRecordCounter = 1;
@@ -57,7 +65,6 @@ function renumberRecords() {
         newRecords[newRecordCounter] = records[oldId];
         newRecordCounter++;
     }
-
     records = newRecords;
     recordCounter = newRecordCounter;
 }
@@ -74,12 +81,10 @@ function loadRecord() {
         clearForm();
     }
 }
-
 function updateTable() {
     let table = document.getElementById("recordsTable");
 
     table.innerHTML = ""; 
-
     let headerRow = document.createElement("tr");
     headerRow.innerHTML = `
         <th>ID</th>
@@ -128,7 +133,6 @@ function updateTable() {
         table.appendChild(row);
     }
 }
-
 function updateSelect() {
     let select = document.getElementById("recordId");
     select.innerHTML = '<option value="">Выберите ID записи</option>';
@@ -140,14 +144,12 @@ function updateSelect() {
         select.appendChild(option);
     }
 }
-
 function clearForm() {
     document.getElementById("carName").value = "";
     document.getElementById("ownerName").value = "";
     document.getElementById("plateNumber").value = "";
     document.getElementById("parkingTime").value = "";
 }
-
 function findMinMaxParkingTime() {
     if (Object.keys(records).length === 0) {
         alert("Нет записей для анализа.");
@@ -171,7 +173,6 @@ function findMinMaxParkingTime() {
     alert(`Авто с мин. временем: ${minCar}, авто с макс. временем: ${maxCar}`);
 
 }
-
 function addNewProperty() {
     let property = document.getElementById("newProperty").value;
     let value = document.getElementById("newValue").value;
@@ -192,13 +193,11 @@ function addNewProperty() {
         alert("Пожалуйста, выберите запись и заполните оба поля для свойства и значения.");
     }
 }
-
 function updateLocalStorage() {
 
     localStorage.setItem("records", JSON.stringify(records));
     localStorage.setItem("properties", JSON.stringify(properties));
 }
-
 function deleteProperty() {
     let propertyToDelete = document.getElementById("propertyToDelete").value;
     let deleteAll = document.getElementById("deleteAllRecords").checked;
@@ -234,3 +233,33 @@ function updatePropertySelect() {
         select.appendChild(option);
     }
 }
+function logHistory(message) {
+    const historyDiv = document.getElementById("historyLog");
+    const entryText = ` ${message}`;
+
+    const entry = document.createElement("div");
+    entry.innerText = entryText;
+    historyDiv.prepend(entry);
+    let history = JSON.parse(localStorage.getItem("historyLog")) || [];
+    history.unshift(entryText);
+    localStorage.setItem("historyLog", JSON.stringify(history));
+}
+
+function loadHistory() {
+    const history = JSON.parse(localStorage.getItem("historyLog")) || [];
+    const historyDiv = document.getElementById("historyLog");
+    historyDiv.innerHTML = "";
+
+    history.forEach(entryText => {
+        const entry = document.createElement("div");
+        entry.innerText = entryText;
+        historyDiv.appendChild(entry);
+    });
+}
+
+function clearHistory() {
+    localStorage.removeItem("historyLog");
+    const historyDiv = document.getElementById("historyLog");
+    historyDiv.innerHTML = "";
+}
+

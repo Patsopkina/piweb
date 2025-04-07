@@ -18,12 +18,14 @@ button {
     padding: 8px;
     margin: 5px 0;
 }
-button{
+
+button {
     background-color: #e45627dd;
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-size: medium;
 }
-button:hover{
+
+button:hover {
     background-color: #a73f1cdd;
     cursor: grab;
 }
@@ -44,19 +46,28 @@ td {
 }
 
 th {
-    background-color:  #e45627dd;
+    background-color: #e45627dd;
 }
 
 h2 {
     margin: 5px auto;
     background-color: #ffae4cc4;
     width: fit-content;
-    padding: 5px 10px; 
-    border-radius: 5px; 
+    padding: 5px 10px;
+    border-radius: 5px;
 }
-span{
+
+span {
     background-color: #ffae4cc4;
-    padding: 3px 7px; 
-    border-radius: 5px; 
+    padding: 3px 7px;
+    border-radius: 5px;
+
+}
+
+#historyLog {
+    border: 1px solid #ccc;
+    padding: 10px; 
+    background-color: #ffffff;
+    
     
 }

@@ -20,7 +20,6 @@
         <button onclick="clearForm()">Очистить форму</button>
         <button onclick="deleteRecord()">Удалить выбранную запись</button>
         <button onclick="findMinMaxParkingTime()">Найти минимальное и максимальное время стоянки</button>
-        
         <h2>Добавить новое свойство</h2>
         <input type="text" id="newProperty" placeholder="Название свойства">
         <input type="text" id="newValue" placeholder="Значение свойства">
@@ -34,9 +33,14 @@
         <button onclick="deleteProperty()">Удалить свойство</button>
         <h2>Список автомобилей</h2>
         <table id="recordsTable">
-           
-            <tbody id="recordsTable"></tbody>
+            <tbody id="recordsBody"></tbody>
         </table>
+        <h2>История изменений</h2>
+        <button onclick="clearHistory()">Очистить историю</button>
+<div id="historyLog" > 
+
+</div>
+
     </div>
 
    <script src="cj/js.js"></script>
