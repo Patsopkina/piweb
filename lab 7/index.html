@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кондитерская "Сладкий рай"</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Прайс-лист кондитерской</h1>
+        <table id="priceTable">
+            <thead>
+                <tr>
+                    <th>Название</th>
+                    <th>Артикул</th>
+                    <th>Цена (руб)</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2 id="modalTitle"></h2>
+            <div class="image-container">
+                <img id="modalImage" src="" alt="" class="product-image">
+            </div>
+            <p id="modalArticle"></p>
+            <div class="controls">
+                <label for="modalImageSize">Размер изображения: </label>
+                <select id="modalImageSize">
+                    <option value="small">Маленький (200x200)</option>
+                    <option value="medium" selected>Средний (350x350)</option>
+                    <option value="large">Большой (500x500)</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

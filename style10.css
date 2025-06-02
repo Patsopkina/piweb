@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-image: url(https://img.freepik.com/free-vector/question-marks-background_78370-2896.jpg?semt=ais_items_boosted&w=740);
+}
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.checkboxes label {
+    display: block;
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+button {
+    padding: 10px 15px;
+    background-color: #684caf;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+}
+
+button:hover {
+    background-color: #421e9f;
+}
+
+.results {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    white-space: pre-wrap;
+}
+pre {
+    background: #f8f8f8;
+    padding: 15px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    overflow-x: auto;
+}
+
+code.language-xml {
+    color: #333;
+    font-family: 'Courier New', monospace;
+    line-height: 1.5;
+}
+
+.loading {
+    color: #666;
+    font-style: italic;
+}
+
+.error {
+    color: #d32f2f;
+    font-weight: bold;
+}
+code.language-xml .attr-name {
+    color: #6f42c1;
+}
+
+code.language-xml .attr-value {
+    color: #032f62;
+}
+.xml-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 15px 0;
+}
+
+.xml-table th, .xml-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+.xml-table th {
+    background-color: #f2f2f2;
+}
+
+.xml-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+h1{
+    text-align: center;
+}

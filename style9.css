@@ -1,0 +1,66 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url(https://img.goodfon.ru/wallpaper/big/c/68/art-stil-minimalizm-fon-art-style-minimalism-background-ko-3.webp);
+}
+
+.container {
+    max-width: 800px;
+    height: 570px;
+    margin: 0 auto;
+    background: rgba(80, 173, 254, 0.926);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: rgba(206, 245, 255, 0.941);
+}
+
+th, td {
+    border: 1px solid #000097;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+button {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-weight: bold;
+    width: 250px;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+height: 60px;
+    background-color: #40109a;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #240067;
+}
+
+#min-value {
+    text-align: center;
+    font-size: large;
+    font-weight: bold;
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #aaeef6;
+    border-radius: 4px;
+}
